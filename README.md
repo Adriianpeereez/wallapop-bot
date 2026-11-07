@@ -17,17 +17,7 @@ HTTP directo gasta menos memoria, pero las API internas encontradas no son ofici
 
 ## 2. Instalación en Pterodactyl (sin SSH)
 
-Necesitas acceso de administrador al panel, un nodo operativo y acceso a internet desde el nodo. **Antes de importar el egg hay que construir y publicar la imagen en un registro Docker** desde un ordenador que tenga Docker. No hace falta SSH al nodo, pero sí una cuenta en Docker Hub u otro registro y Docker en tu ordenador. No hemos publicado una imagen de este proyecto: la ruta del egg es un marcador que debes sustituir. Si no puedes publicar una imagen, este egg todavía no está listo para tu panel. La imagen debe compilarse para la arquitectura del nodo (amd64 o arm64).
-
-Por ejemplo, con Docker Hub, en una terminal situada en la carpeta extraída (sustituye `TU_USUARIO`):
-
-```bash
-docker login
-docker build -t TU_USUARIO/wallapop-bot:1.0 .
-docker push TU_USUARIO/wallapop-bot:1.0
-```
-
-Configura el repositorio como público para que Wings pueda descargarlo, o configura de antemano en tu infraestructura el acceso a tu registro privado. Si tu ordenador tiene una arquitectura distinta al nodo usa Docker Buildx para compilar para la arquitectura del nodo. Edita `egg-wallapop.json`: sustituye `ghcr.io/REEMPLAZAR_USUARIO/wallapop-bot:1.0` por `TU_USUARIO/wallapop-bot:1.0`. No pongas credenciales en el JSON.
+Necesitas acceso de administrador al panel y un nodo amd64 con acceso a internet. La imagen prevista es `ghcr.io/adriianpeereez/wallapop-bot:1.0`. El workflow de GitHub Actions debe construirla y publicarla correctamente; el paquete debe ser público para que Wings pueda descargarlo sin autenticación. Comprueba el resultado en la pestaña Actions y la visibilidad en Packages antes de crear el servidor.
 
 1. Descarga y descomprime el ZIP en tu ordenador.
 2. En **Admin → Nests**, selecciona o crea un Nest, pulsa **Import Egg**, selecciona `egg-wallapop.json` y confírmalo. El egg prepara la carpeta y selecciona tu imagen publicada, que contiene Playwright, Chromium y las dependencias Python.
