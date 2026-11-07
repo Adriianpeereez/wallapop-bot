@@ -113,7 +113,14 @@ async def read_page(browser, url, timeout):
         if response and response.status in (403, 429):
             # Solo se informa de indicadores predefinidos; nunca se registra el HTML ni cookies.
             try:
-                title = (await page.title()).lower()
+                raw_title = (await page.title()).strip()
+                # Evitar registrar contenido arbitrario: títulos no reconocidos se resumen.
+                title = raw_title.lower()
+                headers = response.headers
+                safe_server = headers.get('server', '')[:80]
+                safe_type = headers.get('content-type', '')[:80]
+                LOG.warning('Respuesta 403: título=%s; servidor=%s; tipo=%s',
+                            repr(raw_title[:100]), safe_server or 'no indicado', safe_type or 'no indicado')
                 body = (await page.locator('body').inner_text(timeout=3000)).lower()
                 text = title + ' ' + body
                 hints = []
