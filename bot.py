@@ -110,7 +110,24 @@ async def read_page(browser, url, timeout):
     page = await context.new_page()
     try:
         response = await page.goto(url, wait_until='domcontentloaded', timeout=timeout*1000)
-        if response and response.status in (403, 429): raise Blocked(f'Wallapop respondió HTTP {response.status}')
+        if response and response.status in (403, 429):
+            # Solo se informa de indicadores predefinidos; nunca se registra el HTML ni cookies.
+            try:
+                title = (await page.title()).lower()
+                body = (await page.locator('body').inner_text(timeout=3000)).lower()
+                text = title + ' ' + body
+                hints = []
+                for label, terms in (
+                    ('captcha', ('captcha', 'verifica que eres humano', 'verify you are human')),
+                    ('acceso denegado', ('access denied', 'acceso denegado', 'forbidden')),
+                    ('verificación de seguridad', ('security check', 'security verification', 'verificación de seguridad', 'checking your browser')),
+                ):
+                    if any(term in text for term in terms): hints.append(label)
+                LOG.warning('Diagnóstico HTTP %s: %s', response.status,
+                            ', '.join(hints) if hints else 'sin indicadores conocidos en la página')
+            except Exception:
+                LOG.warning('Diagnóstico HTTP %s: no se pudo leer la página de respuesta', response.status)
+            raise Blocked(f'Wallapop respondió HTTP {response.status}')
         if response and response.status >= 400: raise SourceError(f'Wallapop respondió HTTP {response.status}')
         for label in ('Aceptar todas', 'Aceptar todo', 'Accept all'):
             try:
