@@ -1,0 +1,3 @@
+# Opcional. Una URL HTTP por línea; se utiliza únicamente la primera línea activa.
+# http://usuario:contrasena@servidor:puerto
+# Si el usuario o contraseña contiene @, : o /, codifícalos como %40, %3A o %2F.
