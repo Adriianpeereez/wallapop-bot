@@ -1,0 +1,5 @@
+.env
+proxies.txt
+data/
+__pycache__/
+*.sqlite3*
