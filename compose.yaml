@@ -1,0 +1,10 @@
+services:
+  wallapop:
+    build: .
+    restart: unless-stopped
+    init: true
+    shm_size: '512mb'
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+      - ./proxies.txt:/app/proxies.txt:ro
