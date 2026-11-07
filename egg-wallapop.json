@@ -1,0 +1,31 @@
+{
+  "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL",
+  "meta": {
+    "version": "PTDL_v2",
+    "update_url": null
+  },
+  "exported_at": "2026-11-07T00:00:00+00:00",
+  "name": "Wallapop Monitor Python",
+  "author": "example@example.invalid",
+  "description": "Monitor de Wallapop con Playwright. Sube bot.py y .env al servidor.",
+  "features": null,
+  "docker_images": {
+    "Wallapop Bot 1.0": "ghcr.io/adriianpeereez/wallapop-bot:1.0"
+  },
+  "file_denylist": [],
+  "startup": "python -u bot.py",
+  "config": {
+    "files": "{}",
+    "startup": "{\"done\": \"Búsqueda\"}",
+    "logs": "{}",
+    "stop": "^C"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!/bin/bash\nset -e\nmkdir -p /mnt/server/data\necho 'Instalación preparada. Sube bot.py y requirements.txt del ZIP al directorio raíz del servidor, crea .env y arranca.'\n",
+      "container": "ghcr.io/ptero-eggs/installers:debian",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": []
+}
