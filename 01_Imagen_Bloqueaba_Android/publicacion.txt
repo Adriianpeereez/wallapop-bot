@@ -41,4 +41,4 @@ FUENTES (fecha de consulta: 22/11/2026)
 
 CRÉDITOS TÉCNICOS
 Animación: 3D en tiempo real con Three.js (WebGL), renderizado fotograma a fotograma. Paisaje: ilustración generada por código para este vídeo. Música y efectos: generados por síntesis (originales, sin licencias de terceros).
-Voz: PENDIENTE. La cuota gratuita de ElevenLabs está agotada (0 créditos) y la voz preferida «Mateo» (LcMajEnHqf3tUTha5ppa) requiere plan de pago para usarse por API. El guion está listo en proyecto/guion.json; al ejecutar proyecto/build.sh con ELEVENLABS_API_KEY y cuota disponible se genera la voz en una sola solicitud y se rehace el vídeo sincronizado.
+Voz: ElevenLabs, modelo eleven_multilingual_v2, voz predefinida «George» (la misma del vídeo de CrowdStrike). La voz preferida «Mateo» (LcMajEnHqf3tUTha5ppa) requiere plan de pago para usarse por API.

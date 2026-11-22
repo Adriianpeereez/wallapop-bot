@@ -290,7 +290,7 @@ function shots(t) {
     look(V(c.x + Math.sin(a) * R, lerp(5.5, 11, k), c.z + Math.cos(a) * R), V(c.x, .3, c.z), 'map'); camera.fov = 46;
     fx.flash = clamp(1 - lt / .12) * .5;
   } else if (t < S.respuesta) {
-    useSet('prof'); scene.fog.density = .03; const [lt, D] = segT(t, 'limites', 'respuesta'); const half = D * .42;
+    useSet('prof'); scene.fog.density = .03; const [lt, D] = segT(t, 'limites', 'respuesta'); const half = D * S.fL;
     const mode = lt < half ? 0 : 1; card.draw(mode); const fl = clamp(1 - Math.abs(lt - half) / .3); cardM.rotation.y = Math.sin(lt * .5) * .15 + (lt > half - .3 && lt < half + .3 ? (lt - half + .3) / .6 * Math.PI * 2 : 0);
     holo.material.color.set(mode ? '#ff8a3d' : '#4fa3ff');
     runAt(pr, 0, t, t - 999); pr.position.set(-1.6, 0, .6); pr.userData.pin.visible = true;
@@ -313,18 +313,18 @@ function overlays(t) {
   tag('NOV 2017 · MAPA DE CALOR', S.mapa + .1, S.calor - .1, t, { y: 290, accent: '#ff8a3d', sub: 'Más de mil millones de actividades' });
   tag('CADA RUTA SUMA LUZ', S.calor + .1, S.remoto - .1, t, { y: 290, accent: '#ffb36b', sub: 'Más gente por un camino = más brillo' });
   const Dr = S.ruser - S.remoto;
-  tag('CIUDAD: TODO BRILLA', S.remoto + .1, S.remoto + Dr * .45, t, { y: 290, accent: '#ffd36b' });
-  tag('ZONA REMOTA: POCAS RUTAS DESTACAN', S.remoto + Dr * .45 + .1, S.ruser - .1, t, { y: 290, size: 58, accent: '#ff5a10' });
+  tag('CIUDAD: TODO BRILLA', S.remoto + .1, S.remoto + Dr * S.fR, t, { y: 290, accent: '#ffd36b' });
+  tag('ZONA REMOTA: POCAS RUTAS DESTACAN', S.remoto + Dr * S.fR + .1, S.ruser - .1, t, { y: 290, size: 58, accent: '#ff5a10' });
   tag('ENERO 2018', S.ruser + .1, S.ejemplos - .1, t, { y: 290, accent: '#4fa3ff', sub: 'El analista Nathan Ruser lo señala' });
   const De = S.limites - S.ejemplos;
-  tag('SIRIA · AFGANISTÁN · …', S.ejemplos + .1, S.ejemplos + De * .38, t, { y: 290, accent: '#ff8a3d', sub: 'Instalación recreada, no una base real' });
-  tag('PERÍMETROS · CAMINOS · RUTINAS', S.ejemplos + De * .38 + .1, S.limites - .1, t, { y: 290, size: 58, accent: '#ff8a3d', sub: 'Muchas bases ya eran conocidas' });
+  tag('SIRIA · AFGANISTÁN · …', S.ejemplos + .1, S.ejemplos + De * S.fE, t, { y: 290, accent: '#ff8a3d', sub: 'Instalación recreada, no una base real' });
+  tag('PERÍMETROS · CAMINOS · RUTINAS', S.ejemplos + De * S.fE + .1, S.limites - .1, t, { y: 290, size: 58, accent: '#ff8a3d', sub: 'Muchas bases ya eran conocidas' });
   const Dl = S.respuesta - S.limites;
-  tag('EL MAPA NO MOSTRABA NOMBRES', S.limites + .1, S.limites + Dl * .42, t, { y: 270, size: 58, accent: '#4fa3ff' });
-  tag('OTRAS FUNCIONES: A VECES SÍ', S.limites + Dl * .42 + .1, S.respuesta - .1, t, { y: 270, size: 58, accent: '#ff8a3d', sub: 'Según los ajustes de privacidad de cada usuario' });
+  tag('EL MAPA NO MOSTRABA NOMBRES', S.limites + .1, S.limites + Dl * S.fL, t, { y: 270, size: 58, accent: '#4fa3ff' });
+  tag('OTRAS FUNCIONES: A VECES SÍ', S.limites + Dl * S.fL + .1, S.respuesta - .1, t, { y: 270, size: 58, accent: '#ff8a3d', sub: 'Según los ajustes de privacidad de cada usuario' });
   const Dp = S.cierre - S.respuesta;
-  tag('STRAVA: MÁS PRIVACIDAD', S.respuesta + .1, S.respuesta + Dp * .5, t, { y: 290, accent: '#5ad18a', sub: 'Ajustes más simples, menos detalle en el mapa' });
-  tag('PENTÁGONO · AGOSTO 2018', S.respuesta + Dp * .5 + .1, S.cierre - .1, t, { y: 290, accent: '#5ad18a', sub: 'Sin geolocalización en zonas de operaciones' });
+  tag('STRAVA: MÁS PRIVACIDAD', S.respuesta + .1, S.respuesta + Dp * S.fP, t, { y: 290, accent: '#5ad18a', sub: 'Ajustes más simples, menos detalle en el mapa' });
+  tag('PENTÁGONO · AGOSTO 2018', S.respuesta + Dp * S.fP + .1, S.cierre - .1, t, { y: 290, accent: '#5ad18a', sub: 'Sin geolocalización en zonas de operaciones' });
   if (t > S.cierre + .2) { const a = eout((t - S.cierre - .2) / .4);
     o2.save(); o2.globalAlpha = a; o2.textAlign = 'center'; o2.font = '120px Anton'; o2.fillStyle = '#fff'; o2.shadowColor = '#ff6a1f'; o2.shadowBlur = 40;
     o2.fillText('BYTEOCULTO', W / 2, 330); o2.shadowBlur = 0; o2.font = '800 40px Inter'; o2.fillStyle = '#ffd9c0'; o2.fillText('Historias ocultas de la tecnología', W / 2, 395); o2.restore(); }
@@ -332,6 +332,8 @@ function overlays(t) {
 }
 window.setup = async (tl) => {
   TL = tl; for (const sg of TL.segments) S[sg.id] = sg.start; buildChunks();
+  const fr = (seg, nxt, w) => { const x = TL.words.find(q => q.seg === seg && q.w.startsWith(w)); return (x.start - .1 - S[seg]) / (S[nxt] - S[seg]); };
+  S.fR = fr('remoto', 'ruser', 'Pero'); S.fE = fr('ejemplos', 'limites', 'Muchas'); S.fL = fr('limites', 'respuesta', 'Aunque'); S.fP = fr('respuesta', 'cierre', 'Y');
   await document.fonts.load('100px Anton'); await document.fonts.load('800 40px Inter'); await document.fonts.load('500 40px Inter');
   ALLTEX.forEach(o => o.draw()); buildStrokes(S); heatT = -1; return true;
 };

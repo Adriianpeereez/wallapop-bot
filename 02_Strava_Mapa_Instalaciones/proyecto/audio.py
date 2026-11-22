@@ -63,17 +63,18 @@ def riser(at, d):
     n = int(d * SR); s = np.arange(n) / SR; x = lp(rng.standard_normal(n), .05 + .25 * s / d) * (s / d) ** 2
     add(fx, x * 3 + np.sin(2 * np.pi * (200 + 600 * (s / d) ** 2) * s) * (s / d) ** 2 * .2, at, .4)
 # eventos sincronizados con los planos
+W_ = lambda seg, w: next(x['start'] for x in TL['words'] if x['seg'] == seg and x['w'].startswith(w)) - .1
 for k in range(16): blip(.3 + k * .17, 700 + (k % 4) * 140, .35)   # señales de ubicación
 riser(1.4, 1.2); boom(2.6, .9); whoosh(2.6); boom(4.2, .6)
 whoosh(S['mapa'], .8, 1.2); riser(S['mapa'] + .5, 2.5)
 for k in range(30): blip(S['mapa'] + .4 + k * .11, 500 + (k % 7) * 90, .18)
 whoosh(S['calor']); boom(S['calor'], .5)
 for k in range(int((S['remoto'] - S['calor']) / .3)): add(fx, rng.standard_normal(int(.03 * SR)) * np.exp(-np.arange(int(.03 * SR)) / SR * 120), S['calor'] + k * .3, .25)  # pisadas
-whoosh(S['remoto']); Dr = S['ruser'] - S['remoto']; whoosh(S['remoto'] + Dr * .45, .6, 1.2)
+whoosh(S['remoto']); whoosh(W_('remoto', 'Pero'), .6, 1.2)
 riser(S['ruser'] - 1.0, 1.0); boom(S['ruser'], 1.0); blip(S['ruser'] + .3, 1600, .8)
-whoosh(S['ejemplos']); De = S['limites'] - S['ejemplos']; boom(S['ejemplos'] + De * .38, .6)
+whoosh(S['ejemplos']); boom(W_('ejemplos', 'Muchas'), .6)
 for k in range(12): blip(S['ejemplos'] + 2 + k * .35, 900, .25)
-whoosh(S['limites']); Dl = S['respuesta'] - S['limites']; whoosh(S['limites'] + Dl * .42, .6, 1.3); glitchfx(S['limites'] + Dl * .42, .25, .6)
+whoosh(S['limites']); whoosh(W_('limites', 'Aunque'), .6, 1.3); glitchfx(W_('limites', 'Aunque'), .25, .6)
 whoosh(S['respuesta']); boom(S['respuesta'] + 1.2, 1.1)   # candado
 riser(S['cierre'] - 1.0, 1.0); boom(S['cierre'] + .2, 1.2)
 mus = pad + bass + tick

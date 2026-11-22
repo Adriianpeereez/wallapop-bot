@@ -46,4 +46,4 @@ FUENTES (fecha de consulta: 22/11/2026)
 
 CRÉDITOS TÉCNICOS
 Animación: 3D en tiempo real con Three.js (WebGL), renderizado fotograma a fotograma; mapa de calor generado por código a partir de rutas ficticias. Música y efectos: generados por síntesis (originales, sin licencias de terceros).
-Voz: PENDIENTE. La cuota gratuita de ElevenLabs está agotada y la voz preferida «Mateo» (LcMajEnHqf3tUTha5ppa) requiere plan de pago por API. Guion listo en proyecto/guion.json; proyecto/build.sh genera la voz en una sola solicitud y rehace el vídeo sincronizado cuando haya cuota.
+Voz: ElevenLabs, modelo eleven_multilingual_v2, voz predefinida «George» (la misma del vídeo de CrowdStrike). La voz preferida «Mateo» (LcMajEnHqf3tUTha5ppa) requiere plan de pago para usarse por API.
