@@ -17,7 +17,7 @@ for s in G['segments']:
     for m in re.finditer(r'\S+', txt):
         i0, i1 = pos + m.start(), pos + m.end() - 1
         if al:
-            ws, we = al['character_start_times_seconds'][i0], al['character_end_times_seconds'][i1]
+            ws, we = LEAD + al['character_start_times_seconds'][i0], LEAD + al['character_end_times_seconds'][i1]
         else:
             ws, we = t + m.start() / CPS, t + (m.end()) / CPS
         words.append({'w': m.group(), 'start': round(ws, 3), 'end': round(we, 3), 'seg': s['id']})

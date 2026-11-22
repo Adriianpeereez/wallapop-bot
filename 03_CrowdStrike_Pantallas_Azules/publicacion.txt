@@ -43,4 +43,4 @@ FUENTES (fecha de consulta: 22/11/2026)
 - TechTarget – Content validation bug led to global outage: https://www.techtarget.com/searchsecurity/news/366596579/CrowdStrike-Content-validation-bug-led-to-global-outage
 
 CRÉDITOS TÉCNICOS
-Animación: 3D en tiempo real con Three.js (WebGL), renderizado fotograma a fotograma. Música y efectos: generados por síntesis para este vídeo (originales, sin licencias de terceros). Pantallas azules, logotipos y paneles: genéricos, creados para el vídeo.
+Animación: 3D en tiempo real con Three.js (WebGL), renderizado fotograma a fotograma. Voz: ElevenLabs, modelo eleven_multilingual_v2, voz predefinida «George» (la voz preferida «Mateo» LcMajEnHqf3tUTha5ppa requiere plan de pago para usarse por API). Música y efectos: generados por síntesis para este vídeo (originales, sin licencias de terceros). Pantallas azules, logotipos y paneles: genéricos, creados para el vídeo.
