@@ -1,0 +1,46 @@
+BYTEOCULTO · CrowdStrike: el día de las pantallas azules (julio 2024)
+=====================================================================
+
+TÍTULO
+Una actualización y millones de pantallas azules: el caso CrowdStrike
+
+DESCRIPCIÓN
+El 19 de julio de 2024, una actualización de contenido de CrowdStrike Falcon para Windows provocó bloqueos con pantalla azul en todo el mundo. No fue un ciberataque: un archivo de configuración defectuoso (Channel File 291) hizo que el sensor leyera memoria fuera de sus límites, y como Falcon funciona en el núcleo de Windows, el sistema entero se bloqueaba.
+CrowdStrike retiró el archivo en 78 minutos (04:09 → 05:27 UTC), pero muchos equipos ya no arrancaban y hubo que repararlos uno a uno en modo seguro, a veces con clave de BitLocker.
+Microsoft estimó unos 8,5 millones de dispositivos Windows afectados (menos del 1 %).
+Las imágenes son una recreación 3D creada para este vídeo; no son imágenes reales del incidente.
+
+HASHTAGS
+#CrowdStrike #Windows #PantallaAzul #Tecnología #Informática #Ciberseguridad #ByteOculto #HistoriasTech #Curiosidades #TechTok
+
+GANCHOS CONSIDERADOS
+1. «Una actualización empezó a distribuirse y, en cuestión de horas, ordenadores de todo el mundo mostraban una pantalla azul.»  <- ELEGIDO (claro, intrigante y fiel a los hechos)
+2. «Un solo archivo de configuración bastó para bloquear millones de ordenadores Windows.»
+3. «No fue un hackeo. Fue una actualización. Y paró aeropuertos, hospitales y oficinas.»  (descartado: sugiere que paró todos)
+4. «78 minutos. Eso duró online el archivo que llenó el mundo de pantallas azules.»
+
+DATOS VERIFICADOS (y cómo se presentan)
+- Fecha: 19/07/2024. Archivo publicado a las 04:09 UTC y corregido a las 05:27 UTC (CrowdStrike).
+- Componente: actualización de contenido «Rapid Response» del sensor Falcon para Windows, Channel File 291 (C-00000291*.sys). Mac y Linux no afectados (CrowdStrike).
+- Causa: la plantilla definía 21 campos de entrada y el código solo aportaba 20; el intérprete leyó fuera de límites y provocó una excepción en modo núcleo (RCA de CrowdStrike, 06/08/2024).
+- No fue un ciberataque ni un incidente de seguridad (CrowdStrike).
+- Equipos: ~8,5 millones de dispositivos Windows, <1 % del total. ESTIMACIÓN de Microsoft (blog de David Weston, 20/07/2024). Se presenta como estimación.
+- Consecuencias (siempre como "varias/algunas", nunca "todos"): American, Delta y United emitieron paradas en tierra; miles de vuelos cancelados en EE. UU. (FlightAware vía AP/NPR); algunos hospitales aplazaron cirugías no urgentes (p. ej. Mass General Brigham, hospitales en Alemania); problemas en líneas 911 de algunos estados; bancos y medios afectados.
+- Solución: arrancar en modo seguro o WinRE y borrar el archivo C-00000291*.sys; los equipos con BitLocker podían requerir la clave de recuperación (CrowdStrike; Microsoft KB5042421). El 25/07/2024 CrowdStrike indicó que >97 % de los sensores Windows estaban de nuevo en línea.
+- Distinción: el vídeo habla de "equipos" (dispositivos) para la cifra de 8,5 M; no da cifras de personas afectadas; los servicios se describen como interrupciones en "varias aerolíneas", "algunos hospitales" y "muchas empresas".
+
+FUENTES (fecha de consulta: 22/11/2026)
+- CrowdStrike – Preliminary Post Incident Review: https://www.crowdstrike.com/en-us/blog/falcon-content-update-preliminary-post-incident-report/
+- CrowdStrike – Root Cause Analysis Channel File 291 (06/08/2024): https://crowdstrike.com/wp-content/uploads/2024/08/Channel-File-291-Incident-Root-Cause-Analysis-08.06.2024.pdf
+- CrowdStrike – Remediation and Guidance Hub: https://www.crowdstrike.com/falcon-content-update-remediation-and-guidance-hub/
+- CrowdStrike – Tech Alert 19/07/2024: https://crowdstrike.com/wp-content/uploads/2024/07/Tech-Alert-Windows-crashes-related-to-Falcon-Sensor-2024-07-19.pdf
+- Microsoft – Helping our customers through the CrowdStrike outage (20/07/2024): https://blogs.microsoft.com/blog/2024/07/20/helping-our-customers-through-the-crowdstrike-outage/
+- Microsoft – KB5042421: https://support.microsoft.com/en-us/help/5042421
+- NPR – Banks, airlines, broadcasters disrupted: https://www.npr.org/2024/07/19/g-s1-12222/microsoft-outage-banks-airlines-broadcasters
+- OPB/AP – Widespread technology outage disrupts flights and banking: https://www.opb.org/article/2024/07/19/technology-outage-crowdstrike-airport/
+- ABC7 – CrowdStrike says disruptions were not a cyberattack: https://abc7.com/post/network-issues-linked-microsoft-systems-causing-outages-businesses/15070489/
+- TechCrunch – Microsoft says 8.5M Windows devices were affected: https://techcrunch.com/2024/07/20/microsoft-says-8-5m-windows-devices-were-affected-by-crowdstrike-outage/
+- TechTarget – Content validation bug led to global outage: https://www.techtarget.com/searchsecurity/news/366596579/CrowdStrike-Content-validation-bug-led-to-global-outage
+
+CRÉDITOS TÉCNICOS
+Animación: 3D en tiempo real con Three.js (WebGL), renderizado fotograma a fotograma. Música y efectos: generados por síntesis para este vídeo (originales, sin licencias de terceros). Pantallas azules, logotipos y paneles: genéricos, creados para el vídeo.

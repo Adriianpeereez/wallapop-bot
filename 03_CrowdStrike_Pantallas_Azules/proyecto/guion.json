@@ -1,0 +1,45 @@
+{
+ "voice_id": "LcMajEnHqf3tUTha5ppa",
+ "segments": [
+  {
+   "id": "hook",
+   "text": "Una actualización empezó a distribuirse y, en cuestión de horas, ordenadores de todo el mundo mostraban una pantalla azul."
+  },
+  {
+   "id": "fecha",
+   "text": "19 de julio de 2024. Y no: no fue un ciberataque."
+  },
+  {
+   "id": "archivo",
+   "text": "Era un archivo de configuración de Falcon, la protección de CrowdStrike para Windows."
+  },
+  {
+   "id": "memoria",
+   "text": "Tenía un fallo que hacía leer memoria fuera de sus límites."
+  },
+  {
+   "id": "nucleo",
+   "text": "Y como Falcon trabaja en el núcleo de Windows, tumbaba el sistema entero."
+  },
+  {
+   "id": "impacto",
+   "text": "Aerolíneas detuvieron vuelos, algunos hospitales aplazaron operaciones y muchas empresas se quedaron paradas."
+  },
+  {
+   "id": "retirada",
+   "text": "CrowdStrike retiró el archivo en 78 minutos, pero muchos equipos ya no arrancaban para corregirse solos."
+  },
+  {
+   "id": "manual",
+   "text": "Había que entrar en modo seguro y borrar el archivo, equipo por equipo. A veces, con clave de BitLocker."
+  },
+  {
+   "id": "cifra",
+   "text": "Microsoft estimó unos 8,5 millones de equipos afectados. Menos del uno por ciento de los Windows."
+  },
+  {
+   "id": "cierre",
+   "text": "Un solo archivo. Millones de pantallas azules."
+  }
+ ]
+}
