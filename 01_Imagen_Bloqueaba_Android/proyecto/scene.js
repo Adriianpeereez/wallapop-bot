@@ -231,7 +231,7 @@ const P3 = phone(1.15); P3.position.set(0, 2.4, 0); sLoop.add(P3);
 const loopRing = new THREE.Mesh(new THREE.TorusGeometry(1.9, .045, 12, 120, Math.PI * 1.75), new THREE.MeshBasicMaterial({ color: '#ff4d6d', toneMapped: false })); loopRing.position.set(0, 2.4, 0); sLoop.add(loopRing);
 const arrowHead = new THREE.Mesh(new THREE.ConeGeometry(.16, .4, 16), loopRing.material); sLoop.add(arrowHead);
 sLoop.add(bokeh(40, V(14, 7, 8), ['#ff4d6d', '#7fa8ff']));
-const loopLight = pl('#ff4d6d', 10, 10, V(0, 2.4, 1.5)); sLoop.add(loopLight); sLoop.add(pl('#7fa8ff', 6, 10, V(-3, 4, 3)));
+const loopLight = pl('#ff4d6d', 10, 10, V(2.6, 4.2, -.8)); sLoop.add(loopLight); sLoop.add(pl('#7fa8ff', 6, 10, V(-3, 4, 3)));
 
 // ---------- G: alcance (Android 10 vs 11) ----------
 const sLine = set('line', 1200);
@@ -439,7 +439,7 @@ window.renderFrame = (t, opts = {}) => {
 };
 function thumbShot() {
   useSet('desk'); P1.show('home'); rig.rotation.x = -.1; deskRed.intensity = 10; H1.userData.thumb.rotation.z = .5;
-  look(V(.5, 1.2, 5.0), V(0, 1.15, 0), 'desk'); camera.fov = 44; camera.updateProjectionMatrix(); return {};
+  look(V(.5, 2.6, 5.4), V(0, 2.45, 0), 'desk'); camera.fov = 44; camera.updateProjectionMatrix(); return {};
 }
 function thumbText() {
   o2.save(); o2.textAlign = 'center'; o2.lineJoin = 'round'; o2.lineWidth = 22; o2.strokeStyle = '#000';
