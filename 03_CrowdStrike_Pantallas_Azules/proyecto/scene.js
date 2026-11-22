@@ -502,7 +502,7 @@ function shots(t) {
     fx.glitch = after > 0 ? Math.exp(-after * 3) * .9 : 0; fx.flash = clamp(1 - lt / .12) * .6;
   } else if (t < s.retirada) {
     // IMPACTO: aeropuerto, hospital, oficina (otros encuadres)
-    const lt = t - s.impacto, D = s.retirada - s.impacto, a = D * .36, b = D * .7;
+    const lt = t - s.impacto, D = s.retirada - s.impacto, a = D * s.fa, b = D * s.fb;
     if (lt < a) { useSet('air'); boardT.draw(1); boardScr.material.map = boardT.t; airMons.forEach(m => setScr(m, M.bsod));
       const k = ease(lt / a); look(vl(V(-9, 1.4, 3), V(-6.5, 1.8, -1), k), V(-3, 5, -6), 'air'); camera.fov = 50; }
     else if (lt < b) { useSet('hos'); hosMons.forEach(m => setScr(m, M.bsod)); hosBlue.intensity = 14;
@@ -571,9 +571,9 @@ function overlays(t) {
   tag('LECTURA FUERA DE LÍMITES', s.memoria + .2, s.nucleo - .1, t, { y: 290, accent: '#ff4d4d', sub: 'Esperaba 21 datos: solo había 20' });
   tag('NÚCLEO DEL SISTEMA', s.nucleo + .2, s.impacto - .1, t, { y: 290, accent: '#ff4d4d', sub: 'Un fallo aquí bloquea todo Windows' });
   const D = s.retirada - s.impacto;
-  tag('VUELOS DETENIDOS', s.impacto + .15, s.impacto + D * .36 - .05, t, { y: 290, accent: '#ffb84d', sub: 'Varias aerolíneas' });
-  tag('OPERACIONES APLAZADAS', s.impacto + D * .36 + .1, s.impacto + D * .7 - .05, t, { y: 290, accent: '#2aa198', sub: 'En algunos hospitales' });
-  tag('EMPRESAS PARADAS', s.impacto + D * .7 + .1, s.retirada - .05, t, { y: 290, accent: '#4fa3ff', sub: 'Bancos, medios, comercios…' });
+  tag('VUELOS DETENIDOS', s.impacto + .15, s.impacto + D * s.fa - .05, t, { y: 290, accent: '#ffb84d', sub: 'Varias aerolíneas' });
+  tag('OPERACIONES APLAZADAS', s.impacto + D * s.fa + .1, s.impacto + D * s.fb - .05, t, { y: 290, accent: '#2aa198', sub: 'En algunos hospitales' });
+  tag('EMPRESAS PARADAS', s.impacto + D * s.fb + .1, s.retirada - .05, t, { y: 290, accent: '#4fa3ff', sub: 'Bancos, medios, comercios…' });
   if (t >= s.retirada && t < s.retirada + (s.manual - s.retirada) * .42) {
     const m = Math.round(S._clk || 249); const hh = String(Math.floor(m / 60)).padStart(2, '0'), mm = String(m % 60).padStart(2, '0');
     tag(`${hh}:${mm} UTC`, s.retirada + .05, s.retirada + (s.manual - s.retirada) * .42, t, { y: 290, size: 90, accent: '#ff8a3d', sub: `${Math.round(m - 249)} min desde el envío` });
@@ -590,6 +590,8 @@ function overlays(t) {
 window.setup = async (tl) => {
   TL = tl; for (const sg of TL.segments) S[sg.id] = sg.start;
   S.fecha = Math.max(S.fecha, 5.0 + 1.5); buildChunks();
+  const wd = (seg, w) => TL.words.find(x => x.seg === seg && x.w.toLowerCase().startsWith(w)).start;
+  const Di = S.retirada - S.impacto; S.fa = (wd('impacto', 'algunos') - .1 - S.impacto) / Di; S.fb = (wd('impacto', 'muchas') - .1 - S.impacto) / Di;
   await document.fonts.load('100px Anton'); await document.fonts.load('800 40px Inter'); await document.fonts.load('500 40px Inter');
   ALLTEX.forEach(o => o.draw()); boardT.draw(0); samplePts();
   for (const m of [...Object.values(SETS)]) m.traverse(o => { if (o.material && o.material.map && o.material.map.isCanvasTexture) o.material.map.needsUpdate = true; });

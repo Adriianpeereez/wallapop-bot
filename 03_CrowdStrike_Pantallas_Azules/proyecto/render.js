@@ -41,7 +41,7 @@ const save = (f, d) => fs.writeFileSync(f, Buffer.from(d.split(',')[1], 'base64'
       }
     }));
     execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', String(FPS), '-i', path.join(dir, 'f%05d.jpg'),
-      '-c:v', 'libx264', '-preset', 'slow', '-crf', '18', '-pix_fmt', 'yuv420p', '-r', String(FPS), path.join(ROOT, 'build/video.mp4')]);
+      '-c:v', 'libx264', '-preset', 'slow', '-crf', '21', '-pix_fmt', 'yuv420p', '-r', String(FPS), path.join(ROOT, 'build/video.mp4')]);
     console.log('video.mp4 OK');
   }
   await browser.close(); srv.close();

@@ -73,7 +73,8 @@ for k in range(20): blip(S['memoria'] + k * Dm * .62 / 20, 1500, .35)
 boom(S['memoria'] + Dm * .62, 1.2); glitchfx(S['memoria'] + Dm * .62, .5, 1.4)
 whoosh(S['nucleo']); Dn = S['impacto'] - S['nucleo']; boom(S['nucleo'] + Dn * .55, 1.4); glitchfx(S['nucleo'] + Dn * .55, .6, 1.2)
 Di = S['retirada'] - S['impacto']
-for a in (0, .36, .7): whoosh(S['impacto'] + Di * a); boom(S['impacto'] + Di * a, .5)
+W_ = {w['w'].lower(): w['start'] for w in TL['words'] if w['seg'] == 'impacto'}
+for at in (S['impacto'], W_['algunos'] - .1, W_['muchas'] - .1): whoosh(at); boom(at, .5)
 whoosh(S['retirada']); Dr = S['manual'] - S['retirada']; whoosh(S['retirada'] + Dr * .42); boom(S['retirada'] + Dr * .42, .5)
 whoosh(S['manual']); Dk = S['cifra'] - S['manual']
 for k in range(60): blip(S['manual'] + .1 + k * .045, 2200, .18) if k % 3 else None  # tecleo
