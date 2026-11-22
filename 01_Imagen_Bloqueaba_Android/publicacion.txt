@@ -1,0 +1,44 @@
+BYTEOCULTO · La imagen que bloqueaba algunos móviles Android (2020)
+====================================================================
+
+TÍTULO
+La foto que hacía reiniciarse algunos Android sin parar
+
+DESCRIPCIÓN
+En mayo de 2020 se hizo viral el aviso de no usar una foto concreta de un paisaje como fondo de pantalla. En algunos móviles con Android 10, ponerla de fondo provocaba fallos de la interfaz del sistema y reinicios en bucle.
+No era un virus ni un ataque: la foto usaba un perfil de color distinto a sRGB. Android 10 calculaba el brillo de los píxeles y lo repartía en 256 casillas (0–255); con esos colores, el cálculo podía dar 256, una casilla que no existe, y la interfaz del sistema se cerraba.
+Se documentó en algunos Samsung y Google Pixel, no en todos; Android 11 convertía la imagen a sRGB y no se veía afectado. Se corrigió con actualizaciones; mientras tanto, la salida era el modo seguro o restablecer el móvil.
+Las imágenes son una recreación 3D creada para este vídeo; el paisaje es una ilustración propia, no la foto original.
+
+HASHTAGS
+#Android #Tecnología #FondoDePantalla #Bug #Informática #Curiosidades #Samsung #Pixel #ByteOculto #TechTok
+
+GANCHOS CONSIDERADOS
+1. «Esta imagen parecía un fondo de pantalla normal. Pero, al ponerla en algunos móviles Android, empezaban a reiniciarse sin parar.»  <- ELEGIDO (claro, concreto y fiel a los hechos)
+2. «Esta imagen parecía un fondo de pantalla normal. Pero, al ponerla en algunos móviles, podía hacer que empezaran a fallar.»  (propuesto; algo menos concreto)
+3. «Una foto de un paisaje. Un solo número de más. Y algunos Android en bucle infinito.»
+4. «No la pongas de fondo: esta foto podía bloquear algunos Android.»  (descartado: suena a que bastaba con verla)
+
+DATOS VERIFICADOS (y cómo se presentan)
+- Cuándo: 31 de mayo de 2020, aviso público del filtrador Ice Universe; cobertura en medios desde el 1 de junio de 2020.
+- Imagen: foto de paisaje (lago y montañas al atardecer) con un perfil de color que no es sRGB (descrito como "RGB"/no sRGB por Davide Bianco, desarrollador de POSP, citado por XDA y Android Authority).
+- Mecanismo: en Android 10, la interfaz del sistema (SystemUI) calcula un histograma de brillo del fondo con 256 posiciones (0–255) y no comprobaba si la imagen era sRGB; con esta foto el cálculo daba 256 → java.lang.ArrayIndexOutOfBoundsException: length=256; index=256 (análisis de River Loop Security y de Davide Bianco).
+- Qué pasaba: al establecerla como fondo (no por verla), SystemUI fallaba; como el fondo seguía configurado, el fallo se repetía al reiniciar y algunos equipos entraban en bucle.
+- Dispositivos: casos documentados en algunos Samsung Galaxy y Google Pixel con Android 10; un Huawei Mate 20 Pro probado no se vio afectado; Android 11 no se veía afectado porque convertía la imagen a sRGB (Dylan Roussel / 9to5Google). Las fuentes no permiten dar una lista completa de modelos o versiones afectados, por lo que el vídeo no la da.
+- Soluciones: arrancar en modo seguro y cambiar el fondo; en algunos casos, restablecer el móvil. Samsung anunció una corrección por firmware; según XDA, Google lo corrigió con el parche de seguridad de agosto de 2020.
+- No fue un ataque deliberado: ninguna fuente lo presenta así.
+
+FUENTES (fecha de consulta: 22/11/2026)
+- XDA Developers – This wallpaper triggers a rare bug causing Android devices to bootloop (con actualizaciones): https://www.xda-developers.com/wallpaper-triggers-rare-bug-causing-android-devices-bootloop
+- Android Authority – Android wallpaper crash: https://androidauthority.com/android-wallpaper-crash-1124577
+- Android Authority – Fix for the wallpaper brick bug: https://www.androidauthority.com/fix-wallpaper-brick-bug-1125528/
+- River Loop Security – Digging into the Android SystemUI Crash from a JPEG: https://riverloopsecurity.com/blog/2020/07/android-systemui-icc/
+- Android Central – A 'cursed' wallpaper could crash your phone with its color profile: https://androidcentral.com/cursed-wallpaper-could-crash-your-phone-its-color-profile
+- The Register – Android bricked by wallpaper: https://www.theregister.com/2020/06/01/android_bricked_by_wallpaper/
+- SamMobile – Cursed wallpaper can crash your Samsung Galaxy smartphone: https://www.sammobile.com/news/cursed-wallpaper-crash-your-samsung-galaxy-smartphone
+- Notebookcheck – Cursed wallpaper soft-bricks several Android phones: https://www.notebookcheck.net/Cursed-wallpaper-soft-bricks-several-Android-phones-Details-and-possible-workarounds.467536.0.html
+- PetaPixel – If you set this photo as your wallpaper, it can brick your Android phone: https://petapixel.com/2020/06/03/if-you-set-this-photo-as-your-wallpaper-it-can-brick-your-android-phone
+
+CRÉDITOS TÉCNICOS
+Animación: 3D en tiempo real con Three.js (WebGL), renderizado fotograma a fotograma. Paisaje: ilustración generada por código para este vídeo. Música y efectos: generados por síntesis (originales, sin licencias de terceros).
+Voz: PENDIENTE. La cuota gratuita de ElevenLabs está agotada (0 créditos) y la voz preferida «Mateo» (LcMajEnHqf3tUTha5ppa) requiere plan de pago para usarse por API. El guion está listo en proyecto/guion.json; al ejecutar proyecto/build.sh con ELEVENLABS_API_KEY y cuota disponible se genera la voz en una sola solicitud y se rehace el vídeo sincronizado.

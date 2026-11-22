@@ -1,0 +1,15 @@
+{
+ "voice_id": "LcMajEnHqf3tUTha5ppa",
+ "segments": [
+  {"id": "hook",    "text": "Esta imagen parecía un fondo de pantalla normal. Pero, al ponerla en algunos móviles Android, empezaban a reiniciarse sin parar."},
+  {"id": "aviso",   "text": "Mayo de 2020. Un conocido filtrador avisa: no pongáis esta foto de fondo."},
+  {"id": "virus",   "text": "No era un virus. El problema estaba escondido en sus colores."},
+  {"id": "perfil",  "text": "La foto usaba un perfil de color distinto a sRGB, el estándar que esperaba Android."},
+  {"id": "brillo",  "text": "Al ponerla de fondo, Android 10 medía el brillo de los píxeles y lo repartía en 256 casillas, de la 0 a la 255."},
+  {"id": "fallo",   "text": "Pero con estos colores, un cálculo podía dar 256. Una casilla que no existe."},
+  {"id": "bucle",   "text": "La interfaz del sistema se cerraba, el móvil se reiniciaba... y el fondo seguía ahí. Una y otra vez."},
+  {"id": "alcance", "text": "Se vio en algunos Samsung y Pixel, no en todos. Android 11 ya convertía la imagen a sRGB."},
+  {"id": "solucion","text": "Google y Samsung lo corrigieron con actualizaciones. Mientras tanto, tocaba modo seguro o restablecer el móvil."},
+  {"id": "cierre",  "text": "Una foto preciosa. Y un solo número de más."}
+ ]
+}
