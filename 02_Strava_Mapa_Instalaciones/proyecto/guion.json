@@ -1,0 +1,14 @@
+{
+ "voice_id": "LcMajEnHqf3tUTha5ppa",
+ "segments": [
+  {"id": "hook",      "text": "Miles de personas salían a correr con una aplicación. Sin saberlo, sus rutas ayudaban a dibujar instalaciones militares en un mapa público."},
+  {"id": "mapa",      "text": "En noviembre de 2017, Strava publicó un mapa de calor mundial con más de mil millones de actividades."},
+  {"id": "calor",     "text": "Cada recorrido sumaba luz: cuanta más gente pasaba por un camino, más brillaba."},
+  {"id": "remoto",    "text": "En las ciudades se ilumina todo. Pero en zonas remotas, con poca actividad alrededor, unas pocas rutas destacaban muchísimo."},
+  {"id": "ruser",     "text": "En enero de 2018, un estudiante australiano, Nathan Ruser, se fijó en ellas."},
+  {"id": "ejemplos",  "text": "Se veían bases en lugares como Siria o Afganistán. Muchas ya eran conocidas, pero el mapa dibujaba sus perímetros, caminos internos y rutinas."},
+  {"id": "limites",   "text": "El mapa no mostraba nombres. Aunque, cruzándolo con otras funciones de la app, a veces se podía llegar a perfiles concretos."},
+  {"id": "respuesta", "text": "Strava prometió simplificar la privacidad y limitó el detalle del mapa. Y el Pentágono restringió la geolocalización en zonas de operaciones."},
+  {"id": "cierre",    "text": "Ninguna ruta revelaba nada por sí sola. Juntas, dibujaron el mapa."}
+ ]
+}

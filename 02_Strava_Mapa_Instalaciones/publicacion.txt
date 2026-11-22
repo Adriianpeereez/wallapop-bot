@@ -1,0 +1,49 @@
+BYTEOCULTO · El mapa de calor de Strava y las instalaciones militares (2017-2018)
+=================================================================================
+
+TÍTULO
+Salían a correr… y sus rutas dibujaron bases militares en un mapa público
+
+DESCRIPCIÓN
+En noviembre de 2017, Strava publicó un mapa de calor mundial con más de mil millones de actividades: cuanto más se repetía un recorrido, más brillaba. En las ciudades todo se ilumina, pero en zonas remotas con poca actividad alrededor, unas pocas rutas destacaban mucho.
+En enero de 2018, el analista australiano Nathan Ruser señaló que así se distinguían bases en lugares como Siria o Afganistán. Muchas ya eran conocidas, pero el mapa dibujaba sus perímetros, caminos internos y rutinas de movimiento.
+El mapa de calor no mostraba nombres; cruzándolo con otras funciones públicas de la app, a veces se podía llegar a perfiles concretos, según los ajustes de privacidad de cada usuario.
+Strava prometió simplificar sus ajustes de privacidad y limitó el detalle del mapa; en agosto de 2018 el Pentágono restringió las funciones de geolocalización en zonas de operaciones.
+La instalación, el mapa y los corredores son una recreación 3D genérica: no corresponden a ninguna ubicación real ni son capturas del mapa original.
+
+HASHTAGS
+#Strava #Privacidad #Datos #Tecnología #Running #Geolocalización #OSINT #ByteOculto #Curiosidades #TechTok
+
+GANCHOS CONSIDERADOS
+1. «Miles de personas salían a correr con una aplicación. Sin saberlo, sus rutas ayudaban a dibujar instalaciones militares en un mapa público.»  <- ELEGIDO (propuesta original con el matiz «ayudaban a dibujar»: el mapa no lo hacía solo ni en todas partes)
+2. «Un mapa de rutas para corredores… y, en algunas zonas remotas, el contorno de bases militares.»
+3. «Cada carrera era inofensiva. Millones juntas dibujaron algo que no debía verse tan claro.»
+4. «Este mapa solo quería mostrar dónde corre la gente. Acabó señalando bases militares.»  (descartado: exagera; muchas eran conocidas)
+
+DATOS VERIFICADOS (y cómo se presentan)
+- Publicación: el mapa de calor global actualizado se publicó en noviembre de 2017 (~1.000 millones de actividades, ~3 billones de puntos GPS según Strava).
+- Detección del problema: 27-28 de enero de 2018, Nathan Ruser (estudiante australiano, Institute for United Conflict Analysts) lo señaló en Twitter; amplia cobertura el 29 de enero de 2018.
+- Cómo se construía: suma anónima y agregada de actividades públicas; excluía actividades privadas y zonas de privacidad definidas por el usuario (Strava).
+- Interpretación: en zonas con poca actividad local, rutas repetidas de personal destacaban y dibujaban perímetros, caminos internos, rutas de patrulla y rutinas.
+- Ejemplos documentados: bases y posiciones en Siria y Afganistán, y otras zonas (Yemen, Níger, Yibuti…), según los análisis publicados. Muchas eran instalaciones conocidas; el mapa añadía detalle sobre su trazado y patrones de actividad.
+- Límites: el mapa de calor no mostraba nombres ni fechas; según The Guardian y otros, usando otras funciones públicas de Strava (segmentos, clasificaciones) a veces se podía llegar a perfiles concretos con los ajustes por defecto. El vídeo no afirma que todas las instalaciones fueran secretas ni que el mapa identificara automáticamente a los usuarios.
+- Medidas de Strava: el CEO James Quarles anunció simplificar la privacidad y revisar funciones; después, el mapa mostró detalle a nivel de calle solo a usuarios registrados, solo zonas usadas por varias personas, con actualización mensual y eliminando datos marcados como privados.
+- Respuesta oficial: el Departamento de Defensa de EE. UU. revisó sus normas; en agosto de 2018 un memorando prohibió el uso de funciones de geolocalización en zonas de operaciones (con excepciones de los mandos).
+
+FUENTES (fecha de consulta: 22/11/2026)
+- TechCrunch – Strava's fitness heatmap reveals military bases: https://techcrunch.com/?p=1591811
+- TechCrunch – Strava says it will simplify privacy settings and review app features: https://techcrunch.com/2018/01/29/strava-simplify-privacy-options-review-features/
+- NPR – Pentagon reviews GPS policies after soldiers' Strava tracks are seemingly exposed: https://www.npr.org/sections/thetwo-way/2018/01/29/581597949/pentagon-reviews-gps-data-after-soldiers-strava-tracks-are-seemingly-exposed
+- NPR – Pentagon restricts fitness and GPS trackers for deployed personnel (07/08/2018): https://www.npr.org/2018/08/07/636274330/pentagon-restricts-fitness-and-gps-trackers-for-deployed-personnel
+- PBS NewsHour – Pentagon restricts use of fitness trackers, other location-sharing apps: https://www.pbs.org/newshour/nation/pentagon-restricts-use-of-fitness-trackers-other-location-sharing-apps
+- Bellingcat – How to use and interpret data from Strava's activity map: https://bellingcat.com/resources/how-tos/2018/01/29/strava-interpretation-guide
+- The Register – Strava heatmap military base locations: https://www.theregister.com/2018/01/29/strava_heatmap_military_base_locations/
+- Fortune – Strava heat map and military fitness tracking: https://fortune.com/2018/01/29/strava-heat-map-fitbit-fitness-tracking-military/
+- Business Insider – Strava CEO responds: https://www.businessinsider.in/strava-ceo-responds-after-the-companys-heat-map-may-have-compromised-secret-us-military-bases-around-the-world/articleshow/62709405.cms
+- IAPP – Strava updates heat map operations for greater privacy: https://iapp.org/news/a/strava-updates-heat-map-operations-for-greater-privacy
+- Cycling Weekly – Strava updates heatmap that revealed locations of military bases: https://cyclingweekly.com/news/latest-news/strava-updates-heatmap-revealed-locations-secret-military-bases-372967
+- EFF – When trading track records means less privacy: https://www.eff.org/deeplinks/2018/01/when-trading-track-records-means-less-privacy
+
+CRÉDITOS TÉCNICOS
+Animación: 3D en tiempo real con Three.js (WebGL), renderizado fotograma a fotograma; mapa de calor generado por código a partir de rutas ficticias. Música y efectos: generados por síntesis (originales, sin licencias de terceros).
+Voz: PENDIENTE. La cuota gratuita de ElevenLabs está agotada y la voz preferida «Mateo» (LcMajEnHqf3tUTha5ppa) requiere plan de pago por API. Guion listo en proyecto/guion.json; proyecto/build.sh genera la voz en una sola solicitud y rehace el vídeo sincronizado cuando haya cuota.
