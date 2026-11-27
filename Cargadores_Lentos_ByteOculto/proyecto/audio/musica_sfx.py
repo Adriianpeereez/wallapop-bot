@@ -63,7 +63,7 @@ sizzle = lambda: np.diff(rng.standard_normal(int(.7 * SR) + 1)) * env(int(.7 * S
 ice = lambda: sum(tone(f(m), .9, 3.5) * .35 for m in (96, 100, 103))
 bonk = lambda: tone(230, .22, 10, lambda p: 2 / np.pi * np.arcsin(np.sin(p)), sweep=-90)
 rise = lambda: tone(300, .45, 2, sweep=600) * .5
-E = [(click(), .05, .25), (pop(), 4.95, .35), (whoosh(.6), 5.5, .5), (pop(), 5.95, .3), (whoosh(.5), 6.9, .35),
+E = [(click(), .05, .25), (pop(), 5.45, .22), (whoosh(.45), 5.3, .3), (pop(), 5.62, .2), (whoosh(.5), 6.9, .35),
      (whoosh(.4), 8.6, .3), (whoosh(.4), 9.75, .3), (whoosh(.7), 11.5, .55), (rise(), 13.25, .35), (rise(), 13.95, .35),
      (pop(), 14.8, .25), (click(), 15.7, .35), (whoosh(.6, False), 15.75, .5), (blips(), 16.3, .3), (blips(), 17.4, .3),
      (chime(), 18.25, .3), (shimmer(), 19.4, .35), (whoosh(.5), 20.75, .55), (blips(), 21.15, .25), (bonk(), 21.75, .35),
@@ -76,8 +76,8 @@ for x, at, g in E: addb(x, at, g)
 # ---- mezcla: la música se atenúa mientras habla la voz ----
 v, vsr = sf.read("voz.wav"); v = np.interp(np.arange(int(len(v) * SR / vsr)) / SR, np.arange(len(v)) / vsr, v)
 v = np.pad(v, (0, max(0, N - len(v))))[:N]
-ve = lp(np.abs(v), .0008); duck = 1 - .55 * np.clip(ve / (np.percentile(ve, 90) + 1e-9), 0, 1)
-mix = v * 1.0 + mus * duck * .55 + fx * .5
+ve = lp(np.abs(v), .0008); duck = 1 - .65 * np.clip(ve / (np.percentile(ve, 90) + 1e-9), 0, 1)
+mix = v * 1.0 + mus * duck * .45 + fx * .42
 mix = mix / np.max(np.abs(mix)) * .9
 sf.write("musica.wav", mus, SR); sf.write("sfx.wav", fx, SR); sf.write("mezcla.wav", np.stack([mix, mix], 1), SR)
 print("ok", round(len(mix) / SR, 2))
