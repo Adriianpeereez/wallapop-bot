@@ -1,0 +1,21 @@
+PROYECTO EDITABLE · «¿Por qué tarda más?» (ByteOculto)
+
+guion.json            Texto de cada frase (subtítulo) y versión fonética para la voz.
+audio/tts.py          Genera voz.wav con la voz local Piper es_ES «davefx» (assets/voz).
+audio/alinear.py      Tiempos palabra a palabra (reconocimiento local Parakeet, sherpa-onnx) -> palabras.json.
+audio/envolvente.py   Envolvente de la voz para la boca de Byte.
+audio/musica_sfx.py   Música y efectos sintetizados + mezcla.wav.
+render/escena.js      Escena 3D (three.js): Byte, cargadores, cable, cámara, subtítulos y marca.
+render/render.cjs     Render fotograma a fotograma (Chromium + Playwright).
+
+Pasos:
+  pip install piper-tts sherpa-onnx soundfile numpy
+  cd audio && python3 tts.py && python3 alinear.py <carpeta_modelo_parakeet> && python3 envolvente.py && python3 musica_sfx.py
+  cd ../render && node render.cjs frames 0 1272 ./frames
+  node render.cjs thumb ../../miniatura.png
+  ffmpeg -framerate 30 -i frames/f_%05d.jpg -i ../audio/mezcla.wav -c:v libx264 -crf 18 -pix_fmt yuv420p \
+         -c:a aac -b:a 192k -af loudnorm=I=-14:TP=-1.5 -movflags +faststart -shortest ../../Cargadores_Lentos_ByteOculto.mp4
+
+Vista rápida de un instante: node render.cjs shots 9.4,20 ./pruebas 0.5
+
+Byte es un diseño provisional (makeByte en escena.js): sustitúyelo por el modelo o la imagen oficial del canal.

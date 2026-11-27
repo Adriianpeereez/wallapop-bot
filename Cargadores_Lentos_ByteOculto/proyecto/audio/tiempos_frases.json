@@ -1,0 +1,61 @@
+{
+ "sr": 22050,
+ "duracion": 41.757,
+ "frases": [
+  {
+   "id": "gancho1",
+   "start": 0.3,
+   "end": 4.828
+  },
+  {
+   "id": "gancho2",
+   "start": 4.978,
+   "end": 5.408
+  },
+  {
+   "id": "intro",
+   "start": 5.758,
+   "end": 7.498
+  },
+  {
+   "id": "vatios",
+   "start": 7.748,
+   "end": 11.54
+  },
+  {
+   "id": "ambos",
+   "start": 11.79,
+   "end": 15.153
+  },
+  {
+   "id": "acuerdo",
+   "start": 15.403,
+   "end": 20.911
+  },
+  {
+   "id": "lento",
+   "start": 21.111,
+   "end": 23.738
+  },
+  {
+   "id": "cable",
+   "start": 23.987,
+   "end": 28.409
+  },
+  {
+   "id": "mas_vatios",
+   "start": 28.659,
+   "end": 32.584
+  },
+  {
+   "id": "temperatura",
+   "start": 32.834,
+   "end": 37.321
+  },
+  {
+   "id": "cierre",
+   "start": 37.571,
+   "end": 41.157
+  }
+ ]
+}

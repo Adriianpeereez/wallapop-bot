@@ -1,0 +1,71 @@
+{
+ "_nota": "text = lo que se ve en subtítulos; tts = lo que lee la voz (escritura fonética para siglas). pausa = silencio tras la frase (s).",
+ "frases": [
+  {
+   "id": "gancho1",
+   "text": "Estos dos cargadores parecen iguales… pero uno puede tardar mucho más en cargar el mismo móvil.",
+   "tts": "Estos dos cargadores parecen iguales... pero uno puede tardar mucho más en cargar el mismo móvil.",
+   "pausa": 0.15
+  },
+  {
+   "id": "gancho2",
+   "text": "¿Por qué?",
+   "tts": "¿Por qué?",
+   "pausa": 0.35
+  },
+  {
+   "id": "intro",
+   "text": "Soy Byte. Vamos a investigarlo.",
+   "tts": "Soy Bait. Vamos a investigarlo.",
+   "pausa": 0.25
+  },
+  {
+   "id": "vatios",
+   "text": "En la etiqueta, los vatios indican la potencia máxima que puede dar el cargador.",
+   "tts": "En la etiqueta, los vatios indican la potencia máxima que puede dar el cargador.",
+   "pausa": 0.25
+  },
+  {
+   "id": "ambos",
+   "text": "Pero la velocidad depende de los dos: del cargador y del móvil.",
+   "tts": "Pero la velocidad depende de los dos: del cargador y del móvil.",
+   "pausa": 0.25
+  },
+  {
+   "id": "acuerdo",
+   "text": "Al conectarlos, se comunican por el cable y acuerdan un modo de carga que ambos admitan, como USB Power Delivery.",
+   "tts": "Al conectarlos, se comunican por el cable y acuerdan un modo de carga que ambos admitan, como u ese be, páuer delíveri.",
+   "pausa": 0.2
+  },
+  {
+   "id": "lento",
+   "text": "Si no comparten uno rápido, cargan más despacio.",
+   "tts": "Si no comparten uno rápido, cargan más despacio.",
+   "pausa": 0.25
+  },
+  {
+   "id": "cable",
+   "text": "El cable también cuenta: no todos los USB-C soportan la misma potencia.",
+   "tts": "El cable también cuenta: no todos los u ese be ce soportan la misma potencia.",
+   "pausa": 0.25
+  },
+  {
+   "id": "mas_vatios",
+   "text": "Y tranquilo: más vatios no obligan al móvil a recibir más de lo que admite.",
+   "tts": "Y tranquilo: más vatios no obligan al móvil a recibir más de lo que admite.",
+   "pausa": 0.25
+  },
+  {
+   "id": "temperatura",
+   "text": "Además, el móvil frena la carga si está muy caliente o muy frío, o casi lleno.",
+   "tts": "Además, el móvil frena la carga si está muy caliente o muy frío, o casi lleno.",
+   "pausa": 0.25
+  },
+  {
+   "id": "cierre",
+   "text": "Cargador, cable y móvil tienen que entenderse. Esto es ByteOculto.",
+   "tts": "Cargador, cable y móvil tienen que entenderse. Esto es Bait Oculto.",
+   "pausa": 0.6
+  }
+ ]
+}

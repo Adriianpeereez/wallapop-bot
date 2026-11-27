@@ -1,0 +1,29 @@
+TÍTULO
+¿Por qué tarda más? Dos cargadores que parecen iguales… y no cargan igual
+
+DESCRIPCIÓN
+Dos cargadores casi idénticos pueden cargar el mismo móvil a velocidades muy distintas. Byte abre los cargadores, entra en el cable y te lo explica en menos de un minuto:
+
+· Los vatios (W) de la etiqueta indican la potencia máxima que puede dar el cargador.
+· La velocidad depende de los dos: del cargador y del móvil. Manda el límite más bajo.
+· Al conectarlos, se comunican por el cable y acuerdan un modo de carga que ambos admitan, como USB Power Delivery. Si no comparten uno rápido, cargan más despacio.
+· El cable también cuenta: no todos los cables USB-C soportan la misma potencia.
+· Un cargador con más vatios no obliga al móvil a recibir más de lo que admite.
+· El móvil reduce la carga si está muy caliente, muy frío o con la batería casi llena.
+
+La animación es una representación visual: no muestra mediciones reales.
+
+HASHTAGS
+#ByteOculto #Cargadores #CargaRápida #USBC #USBPowerDelivery #Tecnología #Móviles #Shorts
+
+FUENTES CONSULTADAS
+- USB-IF, especificación USB Type-C Cable and Connector (cables de 3 A por defecto; para 5 A el cable debe llevar marcado electrónico): https://www.usb.org/sites/default/files/USB%20Type-C%20Spec%20R2.0%20-%20August%202019.pdf
+- Infineon, preguntas frecuentes sobre cables USB-C con e-marker (EMCA): https://community.infineon.com/t5/Knowledge-Base-Articles/USB-Type-C-Cables-and-EMCA-FAQs/ta-p/679222
+- Texas Instruments, nota técnica sobre USB Power Delivery (el cargador anuncia sus perfiles y el dispositivo pide uno): https://ti.com/lit/pdf/slva842
+- Acroname, «The Basics of USB Power Delivery Negotiations»: https://acroname.com/blog/basics-usb-power-delivery-negotiations
+- Apple, «Fast charge your iPhone» (adaptador compatible con USB-PD; la carga rápida puede no funcionar con demasiado frío o calor): https://support.apple.com/en-us/102574
+- Apple, «About iPhone charge speeds»: https://support.apple.com/en-us/120619
+- Google Pixel, ayuda sobre carga (la velocidad depende del cargador, del cable y de que el móvil admita esa potencia; ajustes por temperatura): https://support.google.com/pixelphone/answer/7106961
+- Samsung, cargador de 45 W (PD 3.0 con PPS): https://www.samsung.com/uk/mobile-accessories/45w-power-adapter-black-without-cable-ep-t4511nbeggb/
+- Anker, requisitos de Super Fast Charging 2.0 (cargador PPS y cable de 5 A): https://service.anker.com/article-description/Why-does-my-Samsung-phone-not-appear-Super-fast-charging-2-0
+- Battery University, BU-409 «Charging Lithium-ion» (la corriente baja al acercarse a la carga completa): https://batteryuniversity.com/article/bu-409-charging-lithium-ion
